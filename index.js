@@ -1,5 +1,5 @@
 import  express  from "express";
-import cors from "express";
+import cors from "cors";
 
 const app = express()
 
@@ -12,8 +12,6 @@ const dogs = [
     breed: 'Chihuahua',
     age: 34,
 },
-
-
 {
     name: 'Buba',
     breed: 'Labrador',
@@ -25,19 +23,15 @@ const dogs = [
     breed: 'Yorkie',
     age: 23,
 },
-
 {
     name: 'Bob',
     breed: 'Pittbul',
     age: 69,
-},
-
-
-
+}
 ]
 
 
 
-app.get("/" , (req,res) => res.send('Welcome to my API'))
+app.get('/', (req,res) => res.json(dogs))
 
 app.listen(4000, () => console.log('Api running ❤️'))
